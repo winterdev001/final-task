@@ -42,7 +42,7 @@ class TransactionsController < ApplicationController
  
   def destroy
     @transaction.destroy
-      format.html { redirect_to transactions_url, notice: 'Transaction was successfully destroyed.' 
+      redirect_to transactions_url, notice: 'Transaction was successfully destroyed.' 
   end
 
   private
