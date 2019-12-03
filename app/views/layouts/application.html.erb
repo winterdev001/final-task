@@ -17,10 +17,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>     
-    
+  <body>      
     <%= yield %>
-    <div class="container ">      
+    <div class="container">      
         <% if flash[:alert] %>
           <div class="bg-danger card col-12  d-flex justify-content-center notification" >
             <p class="alert text-center "><%= alert %></p>
