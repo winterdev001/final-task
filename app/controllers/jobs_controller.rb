@@ -29,7 +29,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
 
     if @job.save
-        redirect_to @job, notice: 'Job was successfully created.' 
+        redirect_to companies_path, notice: 'Job was successfully created.' 
       else
         render :new 
       end
