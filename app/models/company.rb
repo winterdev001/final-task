@@ -9,7 +9,5 @@ class Company < ApplicationRecord
 
 
   has_many :comments, dependent: :destroy
-  validates :username, presence: true 
-  validates :location, presence: true 
-  validates :description, presence: true 
+  
 end

@@ -9,9 +9,5 @@ class Worker < ApplicationRecord
 
   has_many :transactions
 
-  validates :username, presence: true 
-  validates :location, presence: true 
-  validates :skills, presence: true 
-  validates :hourly_rate, presence: true 
-  validates :description, presence: true 
+  
 end
