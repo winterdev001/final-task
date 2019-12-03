@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 gem 'devise'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem "rails_admin-i18n"
 
 gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
