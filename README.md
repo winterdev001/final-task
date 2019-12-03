@@ -58,7 +58,7 @@ https://docs.google.com/document/d/1O-BFKtTUa7VUnMbRd0mj2stFV4c49muVCW85m7vgjKI/
 <h3> Scheduled Gems </h3>
 
 * Paperclip </br>
-* Act_as_votable</br>
+* rails_admin</br>
 * guard-livereload</br>
 
 
