@@ -11,7 +11,7 @@
 end   
 
 1.upto(5) do |num|                                                  
-    Worker.create!(email:"dev#{num}@gmail.com",password:"dev123#{num}",location:"Kicukiro#{num}/Kigali",skills:"web developer",hourly_rate:"2#{num}",description:"web developer")       
+    Worker.create!(email:"dev#{num}@gmail.com",password:"dev123#{num}",username: "winter#{num}",location:"Kicukiro#{num}/Kigali",skills:"web developer",hourly_rate:"2#{num}",description:"web developer")       
 end  
 
 1.upto(12) do |num|                                                   
