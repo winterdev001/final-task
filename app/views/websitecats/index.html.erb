@@ -1,0 +1,112 @@
+<section class="hero-wrap">
+  <div class="layer">
+    <nav class="navbar navbar-expand-lg navbar-light " id="navigation">
+    <a class="navbar-brand " href="#"><h2>XtraMiler</h2></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 "> 
+        <li class="nav-item active">  
+            <%= link_to 'Home',root_path, class:'nav-link'%>
+        </li>
+        <li class="nav-item">
+            <a class=" nav-link" href="/jobs">Browse Jobs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Workers</a>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Post a Job', new_job_path, class:'nav-link btn btn-primary post-j '%>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link btn want_job" href="#">Want a Job</a>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Worker', new_worker_session_path, class:'btn btn-dark nav-link mr-2'%>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Company', new_company_session_path, class:'btn btn-dark nav-link '%>
+        </li>
+        
+        </ul>
+    
+    </div>
+    </nav>
+
+    <div class="text-light intro  animated slideInUp ">     
+
+        <span class="intro-content-2 d-flex justify-content-center ">Jobs / Website & Software </span>    
+    </div>
+    
+    
+    </div>    
+</div>
+</section>
+
+  <div class="container mb-3 mt-5 d-flex justify content-center">
+    <h3 class="text-center">All jobs</h3>
+     <% @jobs.each do |job| %>
+    <div class="card apply-card mt-5 animated slideInUp " style="width:50rem;">
+        <div class="row">
+            <div class="col-md-6">
+                
+                <div class="card-body"> 
+                    <div class="ml-3 mt-2 text-uppercase font-weight-bold text-main"><%= job.job_type%></div>
+                    <div class="ml-3 mt-2 text-capitalize font-weight-bold"><%= job.title%></div>
+                    <div class='ml-3 mt-3'><%= job.company.email%> ,&nbsp;&nbsp;&nbsp;&nbsp;  <%= job.location%></div>
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+              <%= link_to  "Apply", new_request_path(job_id: job.id),method: :post ,class:'btn btn-primary btn-lg mt-5 apply-btn' %>
+            </div>
+        </div>
+    </div>
+    <%end%>
+  </div>
+<section>
+  
+</section>
+<footer class="ftco-footer ftco-bg-dark ftco-section bg-main footer-footer">
+    <div class="container">
+    <div class="row mb-5 text-decoration-none text-light">
+        
+        <div class="col-md">
+        <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Employers</h2>
+            <ul class="list-unstyled">
+            <li><a href="#" class="pb-1 d-block text-decoration-none text-light">Browse Candidates</a></li>
+            <li><a href="#" class="pb-1 d-block text-decoration-none text-light">Post a Job</a></li>            
+            </ul>
+        </div>
+        </div>
+        <div class="col-md">
+        <div class="ftco-footer-widget mb-4 ml-md-4">
+            <h2 class="ftco-heading-2">Candidate</h2>
+            <ul class="list-unstyled">
+            <li><a href="#" class="pb-1 d-block text-decoration-none text-light">Browse Jobs</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="col-md">
+        <div class="ftco-footer-widget mb-4 ml-md-4">
+            <h2 class="ftco-heading-2">Account</h2>
+            <ul class="list-unstyled">
+            <li><a href="#" class="pb-1 d-block text-decoration-none text-light">Sign In</a></li>
+            <li><a href="#" class="pb-1 d-block text-decoration-none text-light">Create Account</a></li>
+            </ul>
+        </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+        <p>
+            Copyright 2019 All rights reserved | XtraMiler
+        </p>
+        </div>
+    </div>
+    </div>
+</footer>
