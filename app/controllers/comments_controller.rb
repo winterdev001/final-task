@@ -19,12 +19,9 @@ class CommentsController < ApplicationController
 
   def update 
     @comment = Comment.find(params[:id])
+    @current = current_company.id
     if @comment.update(params[:comment].permit(:content))
-      if current_company
-        redirect_to companies_path
-      else
-        redirect_to workers_path
-      end
+      redirect_to "/companies/#{@current}"
     end
   end
 

@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy,:web]
-  before_action :authenticate_company!, only: [:new,:show,:edit,:destroy]
+  before_action :authenticate_company!, only: [:new,:edit,:destroy]
 
   def index
     @jobs = Job.all
