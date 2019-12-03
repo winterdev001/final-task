@@ -442,3 +442,10 @@ $borderW: 0.3rem;
   width: 5rem !important;
   border:none;
 }
+
+.notification {
+  margin-top: 4rem;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}

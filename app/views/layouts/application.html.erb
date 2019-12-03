@@ -17,27 +17,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  <header>
-    <div>
-    <%
-=begin%>
- <%if company_signed_in?%>
-      <div class="vertical-menu float">
-      <%= link_to 'Jobs', jobs_path%>
-      <%= link_to 'Requests', requests_path%>
-      <a href="#" class="active">Home</a>
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-      <a href="#">Link 4</a>
-    <%else%>
-    <%end%> 
-<%
-=end%>
-</div>
-    </div>
-  
+  <body>     
+    
     <%= yield %>
+    <div class="container ">      
+        <% if flash[:alert] %>
+          <div class="bg-danger card col-12  d-flex justify-content-center notification" >
+            <p class="alert text-center "><%= alert %></p>
+          </div>
+        <% end %>
+    </div>
   </body>
 </html>

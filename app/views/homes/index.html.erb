@@ -135,7 +135,7 @@
         <div class="row">
             <div class="col-md-8 ">
                 <h3 class="mt-3">Recently added jobs</h3>
-                <% @jobs.each do |job| %>
+                <% @jobs.limit(8).each do |job| %>
                 <div class="card apply-card mt-5 animated slideInUp" style="width:45rem;">
                     <div class="row">
                         <div class="col-md-6">

@@ -250,7 +250,7 @@
     </div>
     <div class="tab-pane fade" id="worker" role="tabpanel" aria-labelledby="worker-tab">
         <div class="container mb-3 mt-5 d-flex justify content-center">
-            <div class="card-deck">
+            <div class="card-columns workers-card">
                 <% @workers.all.each do |worker|%>
                     <div class="card" style="width:18rem;">            
                         <div class="card-body">
@@ -282,9 +282,9 @@
 </div>
 <%else%>
    <div class="container mb-3 mt-5 d-flex justify content-center">
-    <div class="card-deck">
+    <div class="card-columns workers-card" >
         <% @workers.all.each do |worker|%>
-            <div class="card" style="width:18rem;">            
+            <div class="card " style="width:18rem;">            
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
