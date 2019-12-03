@@ -8,4 +8,10 @@ class Worker < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   has_many :transactions
+
+  validates :username, presence: true 
+  validates :location, presence: true 
+  validates :skills, presence: true 
+  validates :hourly_rate, presence: true 
+  validates :description, presence: true 
 end

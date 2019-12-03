@@ -1,8 +1,7 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
-  I18n.default_locale = :ja
-  I18n.locale = params[:locale] || I18n.default_locale
+  
 
   ## == Devise ==
   config.authenticate_with do
@@ -11,6 +10,8 @@ RailsAdmin.config do |config|
       warden.authenticate! scope: :administrator unless current_administrator && current_administrator.admin == true
       alert =  'Oops,Only authorized systeme administrator can access this page, Login to continue.'
     # end
+    I18n.default_locale = :ja
+    I18n.locale = params[:locale] || I18n.default_locale
   end
   config.current_user_method(&:current_user)
 
