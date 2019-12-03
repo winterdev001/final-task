@@ -34,7 +34,8 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
 
       if @request.save
-        redirect_to workers_path, notice: 'Request was successfully created.' 
+        redirect_to workers_path, notice: 'Request was successfully created.'        
+      else
         render :new 
       end
   end
