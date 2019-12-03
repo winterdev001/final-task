@@ -15,7 +15,7 @@ end
 end  
 
 1.upto(12) do |num|                                                   
-    Job.create!(title: "Software Developer", deadline: "2019-12-1#{num} 1:40:00",  amount: "2#{num}", job_type:"Fulltime", location:"kigali#{num}",remote:"1",description:"web developer",company_id:"#{(1..5).rand}")       
+    Job.create!(title: "Software Developer", deadline: "2019-12-1#{num} 1:40:00",  amount: "2#{num}", job_type:"Fulltime", location:"kigali#{num}",remote:"1",description:"web developer",company_id:1)       
 end  
 
 Administrator.create!(email:"admin2@gmail.com",password:"admin123",admin:true)
