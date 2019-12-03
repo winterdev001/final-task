@@ -23,7 +23,7 @@ class FeedbacksController < ApplicationController
     def create
       @feedback = Feedback.new(feedback_params)  
       if @feedback.save
-        redirect_to jobs_path, notice: 'Feedback was successfully created.' 
+        redirect_to companies_path, notice: 'Feedback was successfully created.' 
       else
         render :new 
       end

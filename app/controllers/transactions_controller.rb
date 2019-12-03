@@ -25,7 +25,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new(transaction_params)
 
       if @transaction.save
-        redirect_to jobs_path, notice: 'Transaction was successfully created.' 
+        redirect_to companies_path, notice: 'Transaction was successfully created.' 
       else
         render :new 
       end
