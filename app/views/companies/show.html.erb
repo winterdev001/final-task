@@ -1,7 +1,9 @@
 <body class="bg-main ">
     <div class="d-flex justify-content-center job-show">
         <div class="card mb-3" style="width:50rem;">
-            <h3 class="card-header text-center">Job Application Request</h3>
+            <h3 class="card-header text-center">Job Application Request
+              <%= link_to 'Back', companies_path, class:'btn btn-light float-right' %>  
+            </h3>
             <div class="card-body">                   
                   <div class="comment-section">
                     <%= render partial: 'comments/form', locals: {comment: @comment, company: @company}%>
@@ -10,8 +12,7 @@
                       <%= render  partial:"comments/index", locals:{comments:@comments,company:@company} %>
                     </div>
                     
-                  </div>
-                  <%= link_to 'Back', companies_path, class:'btn btn-light' %>                           
+                  </div>                                           
             </div>
         </div>
     </div>  
