@@ -21,9 +21,8 @@ Ruby 2.5.1 , Rails 5.2.3
 * User registration function </br>
 * User login function</br>
 * Display Available jobs list function</br>
-* Display Trending jobs list function</br>
+* Display Recent added jobs list function</br>
 * Display Available Workers function</br>
-* Display most hired workers function</br>
 * Post a job function</br>
    * only registered user will be able to post a job</br>
 * Apply to a job function</br>
