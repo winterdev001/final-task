@@ -23,18 +23,13 @@
         <li class="nav-item">
             <a class="nav-link btn want_job" href="/jobs">Want a Job</a>
         </li>
-        <li class="nav-item">
-            <%= link_to 'Worker', new_worker_session_path, class:'btn btn-dark nav-link mr-2'%>
-        </li>
-        <li class="nav-item">
-            <%= link_to 'Company', new_company_session_path, class:'btn btn-dark nav-link '%>
-        </li>
+       
         <%if company_signed_in?%>
             <li>
                 <%= link_to "Company Board",companies_path , class:'btn btn-primary text-light nav-link'%>
             </li>
             <li>
-                <%= link_to "Logout",destroy_company_session_path,method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-dark nav-link'%>
+                <%= link_to "Logout",destroy_company_session_path,method: :delete , class:'btn btn-dark nav-link'%>
             </li>
         <%else%>
         <%end%>
@@ -43,13 +38,16 @@
                 <%= link_to "Worker Board",workers_path , class:'btn btn-primary text-light nav-link'%>
             </li>
             <li>
-                <%= link_to "Logout",destroy_worker_session_path,method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-dark nav-link'%>
+                <%= link_to "Logout",destroy_worker_session_path,method: :delete, class:'btn btn-dark nav-link'%>
             </li>
         <%else%>
         <%end%>
         <%if administrator_signed_in?%>
             <li>
-                <%= link_to "Logout",destroy_administrator_session_path,method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-dark nav-link'%>
+                <%= link_to "Dashboard","/admin",class:'btn btn-dark nav-link'%>
+            </li>
+            <li>
+                <%= link_to "Logout",destroy_administrator_session_path,method: :delete, class:'btn btn-dark nav-link'%>
             </li>
         <%else%>
         <%end%>
@@ -62,17 +60,9 @@
     <div class="text-light intro  animated slideInUp ">     
         <span class="intro-content-1 d-flex justify-content-center ">Find Job, Employment, and Career Opportunities</span><br>
 
-        <span class="intro-content-2 d-flex justify-content-center ">The Eassiest Way to Get Your New Job</span>    
+        <span class="intro-content-2 d-flex justify-content-center ">The Easiest Way to Get Your New Job</span>    
     </div>
-    <div class="search animated slideInUp ">
-        <div class="search">
-            <input type="checkbox" id="trigger" class="search__checkbox" />
-            <label class="search__label-init" for="trigger"></label>
-            <label class="search__label-active" for="trigger"></label>
-            <div class="search__border"></div>
-            <input type="text" class="search__input " placeholder="Job title..."/>
-        <div class="search__close"></div>
-    </div>
+    <div class="search animated slideInUp ">    
     
     </div>    
 </div>
@@ -169,7 +159,12 @@
                 <%Company.all.limit(4).each do |comp| %>
                 <div class="card mt-5 bg-light animated slideInUp">
                     <div class="card-body">
-                        <%= comp.email%>
+                        <%if comp.image.present?%>
+                            <%=image_tag comp.image.url(:medium) %>
+                        <%else%>
+                            <%=image_tag("user1.png" ,class:'card-image-top worker-show-image')%>
+                        <%end%>
+                        <%= comp.username%>
                     </div>
                 </div>
                 <%end%>
@@ -181,35 +176,24 @@
 </section>
 <footer class="ftco-footer ftco-bg-dark ftco-section bg-main footer-footer">
     <div class="container">
-    <div class="row mb-5 text-decoration-none text-light">
-        
+    <div class="row mb-5 text-decoration-none text-light">        
         <div class="col-md">
-        <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Employers</h2>
-            <ul class="list-unstyled">
-            <li><a href="#" class="pb-1 d-block text-decoration-none text-light">Browse Candidates</a></li>
-            <li><a href="#" class="pb-1 d-block text-decoration-none text-light">Post a Job</a></li>            
-            </ul>
-        </div>
+            <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">Employers</h2>
+                <ul class="list-unstyled">
+                    <li><a href="/workers" class="pb-1 d-block text-decoration-none text-light">Browse Candidates</a></li>
+                    <%= link_to 'Post a Job', new_job_path, class:'pb-1 d-block text-decoration-none text-light'%>
+                </ul>
+            </div>
         </div>
         <div class="col-md">
         <div class="ftco-footer-widget mb-4 ml-md-4">
             <h2 class="ftco-heading-2">Candidate</h2>
             <ul class="list-unstyled">
-            <li><a href="#" class="pb-1 d-block text-decoration-none text-light">Browse Jobs</a></li>
+            <li><a href="/jobs" class="pb-1 d-block text-decoration-none text-light">Browse Jobs</a></li>
             </ul>
         </div>
-        </div>
-        <div class="col-md">
-        <div class="ftco-footer-widget mb-4 ml-md-4">
-            <h2 class="ftco-heading-2">Account</h2>
-            <ul class="list-unstyled">
-            <li><a href="#" class="pb-1 d-block text-decoration-none text-light">Sign In</a></li>
-            <li><a href="#" class="pb-1 d-block text-decoration-none text-light">Create Account</a></li>
-            </ul>
-        </div>
-        </div>
-        
+        </div>              
     </div>
     <div class="row">
         <div class="col-md-12 text-center">
